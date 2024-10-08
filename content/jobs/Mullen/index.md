@@ -1,7 +1,7 @@
 ---
 date: '2015-01-1'
 title: 'Software Engineer'
-company: 'Rockstand Digital Pvt Ltd.'
+company: 'Rockstand Digital'
 location: 'Delhi, India'
 range: 'Jan 2015 – July 2017'
 ---

@@ -7,7 +7,7 @@ range: 'July 2023 - July 2024'
 url: 'https://pandaverse.panda.health/'
 ---
 
-- Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more
-- Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements
-- Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders
-- Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship
+- Delivered high-quality, scalable code for the Panda Health's marketplace.
+- Wrote automated tests to ensure code quality.
+- Improved software development process by implementing best practices and tools.
+- Mentored junior developers to improve their skills and knowledge.
