@@ -148,11 +148,12 @@ const About = () => {
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://www.renewbuy.com/">fintech startup</a>,{' '}
-              <a href="https://www.globallogic.com/">service based company</a>,{' '}
-              <a href="https://www.fourkites.com/">supply chain company</a>, and{' '}
-              <a href="https://panda.health/"> an early stage startup</a>.
+              Fast-forward to today, I’ve had the incredible opportunity to work across{' '}
+              <a href="https://www.renewbuy.com/">a fintech startup</a>,{' '}
+              <a href="https://www.globallogic.com/">a service based company</a>,{' '}
+              <a href="https://www.fourkites.com/">a supply chain company</a> and{' '}
+              <a href="https://panda.health/"> an early-stage startup</a>,{<br />}
+              each experience adding a new layer to my journey.
               {/* My
               main focus these days is building accessible, inclusive products and digital
               experiences at <a href="https://panda.health/">Upstatement</a> for a variety of
