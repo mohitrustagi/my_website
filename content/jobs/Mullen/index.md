@@ -1,12 +1,11 @@
 ---
-date: '2015-12-21'
-title: 'Creative Technologist Co-op'
-company: 'MullenLowe'
-location: 'Boston, MA'
-range: 'July - December 2015'
-url: 'https://us.mullenlowe.com/'
+date: '2015-01-1'
+title: 'Software Engineer'
+company: 'Rockstand Digital Pvt Ltd.'
+location: 'Delhi, India'
+range: 'Jan 2015 – July 2017'
 ---
 
-- Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery
-- Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness
-- Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more
+- Developed and maintained backend system serving Android and iOS apps using Python and Django.
+- Contributed to frontend development of Rockstand website using AngularJS and HTML.
+- Implemented a multi-threaded python script to download e-papers of 30+ regional newspapers.

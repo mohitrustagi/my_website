@@ -48,6 +48,7 @@ const StyledCredit = styled.div`
 
   a {
     padding: 10px;
+    padding-bottom: 0px;
   }
 
   .github-stats {
@@ -105,9 +106,26 @@ const Footer = () => {
       </StyledSocialLinks>
 
       <StyledCredit tabindex="-1">
-        <a href="https://github.com/bchiang7/v4">
-          <div>Designed &amp; Built by Brittany Chiang</div>
+        <a href="https://www.linkedin.com/in/bchiang7/">
+          <div>Designed by Brittany Chiang</div>
 
+          {githubInfo.stars && githubInfo.forks && (
+            <div className="github-stats">
+              <span>
+                <Icon name="Star" />
+                <span>{githubInfo.stars.toLocaleString()}</span>
+              </span>
+              <span>
+                <Icon name="Fork" />
+                <span>{githubInfo.forks.toLocaleString()}</span>
+              </span>
+            </div>
+          )}
+        </a>
+      </StyledCredit>
+      <StyledCredit tabindex="-1">
+        <a href=" ">
+          <div>Built with ❤️ by Mohit Rustagi</div>
           {githubInfo.stars && githubInfo.forks && (
             <div className="github-stats">
               <span>

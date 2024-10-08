@@ -1,11 +1,11 @@
 ---
-date: '2017-04-01'
-title: 'Developer'
-company: 'Scout Studio'
-location: 'Northeastern University'
-range: 'Spring 2016 & 2017'
-url: 'https://web.northeastern.edu/scout/'
+date: '2019-06-01'
+title: 'Senior Software Engineer'
+company: 'GlobalLogic'
+location: 'Gurugram, India'
+range: 'June 2019 - July 2020'
+url: 'https://www.globallogic.com/in/'
 ---
 
-- Collaborated with other student designers and engineers on pro-bono projects to create new brands, design systems, and websites for organizations in the community
-- Built and delivered technical solutions according to stakeholder business requirements
+- Deployed at Google, where I developed and maintained multiple web applications.
+<!-- - Built and delivered technical solutions according to stakeholder business requirements -->
