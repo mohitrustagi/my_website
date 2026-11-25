@@ -74,5 +74,8 @@
     "husky": "^6.0.0",
     "lint-staged": "^10.1.2",
     "prettier": "^2.2.1"
+  },
+  "resolutions": {
+    "node-gyp": "^10.2.0"
   }
 }
