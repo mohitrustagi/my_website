@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
+import { email } from '@config';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -64,20 +65,20 @@ const Hero = () => {
   const three = <h3 className="big-heading">I build things for the web.</h3>;
   const four = (
     <>
-      <p>I’m a full stack developer with a passion for building web applications.</p>
+      <p>
+        I’m a full-stack engineer with 10 years of experience shipping products end to end, from
+        backend APIs to React frontends. Currently, I’m a Lead Software Engineer at Hardskills,
+        building learning platforms and AI-assisted assessment.
+      </p>
     </>
   );
-  // const five = (
-  //   <a
-  //     className="email-link"
-  //     href="https://www.newline.co/courses/build-a-spotify-connected-app"
-  //     target="_blank"
-  //     rel="noreferrer">
-  //     Check out my course!
-  //   </a>
-  // );
+  const five = (
+    <a className="email-link" href={`mailto:${email}`}>
+      Get In Touch
+    </a>
+  );
 
-  const items = [one, two, three, four];
+  const items = [one, two, three, four, five];
 
   return (
     <StyledHeroSection>

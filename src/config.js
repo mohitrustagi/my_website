@@ -2,10 +2,10 @@ module.exports = {
   email: 'mohit.rustagi@live.in',
 
   socialMedia: [
-    // {
-    //   name: 'GitHub',
-    //   url: 'https://github.com/bchiang7',
-    // },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/mohitrustagi',
+    },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/mohitrustagii/',
@@ -18,10 +18,6 @@ module.exports = {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/mohitrustagi',
     },
-    // {
-    //   name: 'Codepen',
-    //   url: 'https://codepen.io/bchiang7',
-    // },
   ],
 
   navLinks: [

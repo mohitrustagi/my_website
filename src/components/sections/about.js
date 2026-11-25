@@ -126,12 +126,14 @@ const About = () => {
   }, []);
 
   const skills = [
-    'Python',
-    'Django',
-    'Ruby on Rails 6',
-    'JavaScript (ES6+)',
-    'TypeScript',
+    'Python & Django',
+    'Ruby on Rails',
+    'JavaScript & TypeScript',
     'React',
+    'PostgreSQL & Redis',
+    'Azure & AWS',
+    'Celery & RabbitMQ',
+    'LLM integration',
   ];
 
   return (
@@ -142,22 +144,23 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Mohit and I enjoy creating things that live on the internet. I am a
-              post graduate in Computer Science from{' '}
-              <a href="https://www.manipal.edu/"> Manipal University</a>.
+              Hello! My name is Mohit and I enjoy creating things that live on the internet. I hold
+              a Master of Computer Applications from{' '}
+              <a href="https://www.manipal.edu/">Manipal University</a>.
             </p>
 
             <p>
-              Fast-forward to today, I’ve had the incredible opportunity to work across{' '}
-              <a href="https://www.renewbuy.com/">a fintech startup</a>,{' '}
-              <a href="https://www.globallogic.com/">a service based company</a>,{' '}
-              <a href="https://www.fourkites.com/">a supply chain company</a> and{' '}
-              <a href="https://panda.health/"> an early-stage startup</a>,{<br />}
-              each experience adding a new layer to my journey.
-              {/* My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://panda.health/">Upstatement</a> for a variety of
-              clients. */}
+              Since 2015, I’ve built software at <a href="https://www.renewbuy.com/">RenewBuy</a>, a
+              fintech startup; <a href="https://www.globallogic.com/">GlobalLogic</a>, where I
+              worked on web applications for Google;{' '}
+              <a href="https://www.fourkites.com/">FourKites</a>, a supply-chain visibility
+              platform; and <a href="https://panda.health/">Panda Health</a>, an early-stage
+              health-tech startup. Each one added a new layer to how I build.
+            </p>
+
+            <p>
+              Today I’m a Lead Software Engineer at Hardskills, where I own the backend, lead a
+              small engineering team, and build LLM-powered features like AI-assisted marking.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>

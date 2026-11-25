@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
@@ -69,19 +68,7 @@ const StyledCredit = styled.div`
 `;
 
 const Footer = () => {
-  // const [githubInfo, setGitHubInfo] = useState({
-  //   stars: null,
-  //   forks: null,
-  // });
-
-  useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      return;
-    }
-    fetch('https://api.github.com/repos/bchiang7/v4')
-      .then(response => response.json())
-      .catch(e => console.error(e));
-  }, []);
+  const linkedin = socialMedia.find(({ name }) => name === 'Linkedin');
 
   return (
     <StyledFooter>
@@ -98,22 +85,18 @@ const Footer = () => {
         </ul>
       </StyledSocialLinks>
 
-      <StyledCredit tabindex="-1">
-        <a href="https://www.linkedin.com/in/bchiang7/">
+      <StyledCredit>
+        <a href="https://github.com/bchiang7/v4">
           <div>Designed by Brittany Chiang</div>
         </a>
       </StyledCredit>
-      <StyledCredit tabindex="-1">
-        <a href=" ">
+      <StyledCredit>
+        <a href={linkedin ? linkedin.url : '/'}>
           <div>Built with ❤️ by Mohit Rustagi</div>
         </a>
       </StyledCredit>
     </StyledFooter>
   );
-};
-
-Footer.propTypes = {
-  githubInfo: PropTypes.object,
 };
 
 export default Footer;
