@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
-import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
   max-width: 700px;
@@ -14,7 +13,7 @@ const StyledJobsSection = styled.section`
     display: flex;
 
     @media (max-width: 600px) {
-      display: block;
+      display: none;
     }
 
     // Prevent container from jumping
@@ -164,6 +163,92 @@ const StyledTabPanel = styled.div`
   }
 `;
 
+const StyledAccordion = styled.div`
+  display: none;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+
+  details {
+    border-left: 2px solid var(--lightest-navy);
+    transition: border-color 0.25s var(--easing);
+
+    & + details {
+      margin-top: 4px;
+    }
+
+    &[open] {
+      border-left-color: var(--green);
+    }
+  }
+
+  summary {
+    ${({ theme }) => theme.mixins.link};
+    position: relative;
+    display: block;
+    padding: 14px 40px 14px 16px;
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 22px;
+      right: 16px;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--slate);
+      border-bottom: 2px solid var(--slate);
+      transform: rotate(45deg);
+      transition: transform 0.25s var(--easing);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--light-navy);
+    }
+
+    .company {
+      display: block;
+      color: var(--lightest-slate);
+      font-size: var(--fz-lg);
+      font-weight: 500;
+    }
+
+    .meta {
+      display: block;
+      margin-top: 2px;
+      color: var(--light-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-sm);
+    }
+  }
+
+  details[open] summary {
+    .company {
+      color: var(--green);
+    }
+
+    &:after {
+      top: 26px;
+      transform: rotate(-135deg);
+    }
+  }
+
+  .body {
+    padding: 0 16px 20px;
+
+    ul {
+      ${({ theme }) => theme.mixins.fancyList};
+    }
+  }
+`;
+
 const Jobs = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -193,10 +278,10 @@ const Jobs = () => {
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
   const revealContainer = useRef(null);
-  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) {
+    // Read the preference directly: the hook's value isn't known yet on mount.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return;
     }
 
@@ -244,7 +329,7 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
+      <h2 className="numbered-heading">Experience</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
@@ -303,6 +388,25 @@ const Jobs = () => {
             })}
         </StyledTabPanels>
       </div>
+
+      <StyledAccordion>
+        {jobsData &&
+          jobsData.map(({ node }, i) => {
+            const { frontmatter, html } = node;
+            const { title, company, range } = frontmatter;
+
+            return (
+              <details key={i} open={i === 0}>
+                <summary>
+                  <span className="company">{company}</span>
+                  <span className="meta">{title}</span>
+                  <span className="meta">{range}</span>
+                </summary>
+                <div className="body" dangerouslySetInnerHTML={{ __html: html }} />
+              </details>
+            );
+          })}
+      </StyledAccordion>
     </StyledJobsSection>
   );
 };

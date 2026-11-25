@@ -45,9 +45,10 @@ const StyledCredit = styled.div`
   font-size: var(--fz-xxs);
   line-height: 1;
 
-  a {
-    padding: 10px;
-    padding-bottom: 0px;
+  line-height: 1.6;
+
+  .credit-link {
+    padding: 10px 0;
   }
 
   .github-stats {
@@ -86,14 +87,16 @@ const Footer = () => {
       </StyledSocialLinks>
 
       <StyledCredit>
-        <a href="https://github.com/bchiang7/v4">
-          <div>Designed by Brittany Chiang</div>
-        </a>
-      </StyledCredit>
-      <StyledCredit>
-        <a href={linkedin ? linkedin.url : '/'}>
-          <div>Built with ❤️ by Mohit Rustagi</div>
-        </a>
+        <div>
+          Built by{' '}
+          <a href={linkedin ? linkedin.url : '/'} className="credit-link">
+            Mohit Rustagi
+          </a>
+          {' · '}Design based on{' '}
+          <a href="https://github.com/bchiang7/v4" className="credit-link">
+            Brittany Chiang’s v4
+          </a>
+        </div>
       </StyledCredit>
     </StyledFooter>
   );

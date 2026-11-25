@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { email } from '@config';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -30,6 +29,11 @@ const StyledHeroSection = styled.section`
     }
   }
 
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
   h3 {
     margin-top: 5px;
     color: var(--slate);
@@ -41,9 +45,22 @@ const StyledHeroSection = styled.section`
     max-width: 540px;
   }
 
-  .email-link {
-    ${({ theme }) => theme.mixins.bigButton};
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 32px;
     margin-top: 50px;
+  }
+
+  .primary-link {
+    ${({ theme }) => theme.mixins.bigButton};
+  }
+
+  .secondary-link {
+    ${({ theme }) => theme.mixins.inlineLink};
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
   }
 `;
 
@@ -62,20 +79,23 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Mohit Rustagi.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const three = <h3 className="big-heading">I build products end to end.</h3>;
   const four = (
-    <>
-      <p>
-        I’m a full-stack engineer with 10 years of experience shipping products end to end, from
-        backend APIs to React frontends. Currently, I’m a Lead Software Engineer at Hardskills,
-        building learning platforms and AI-assisted assessment.
-      </p>
-    </>
+    <p>
+      I’m a full-stack engineer with 10 years of experience, from Django APIs to React UIs.
+      Currently, I’m a Lead Software Engineer at Hardskills, building learning platforms and
+      AI-assisted assessment.
+    </p>
   );
   const five = (
-    <a className="email-link" href={`mailto:${email}`}>
-      Get In Touch
-    </a>
+    <div className="cta">
+      <a className="primary-link" href="/#jobs">
+        See my experience
+      </a>
+      <a className="secondary-link" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+        View résumé
+      </a>
+    </div>
   );
 
   const items = [one, two, three, four, five];
